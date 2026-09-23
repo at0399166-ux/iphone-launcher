@@ -8,10 +8,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
+      - name: Install Yarn
+        run: npm install -g yarn
+      - name: Install dependencies with Yarn
+        run: yarn install
       - name: Setup EAS CLI
         run: npm install -g eas-cli
-      - name: Install dependencies
-        run: npm install
       - name: Build with EAS
         run: eas build -p android --profile preview --non-interactive
         env:
