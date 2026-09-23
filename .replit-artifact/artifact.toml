@@ -1,0 +1,24 @@
+kind = "mobile"
+previewPath = "/ios-android-launcher/"
+title = "iOS Android Launcher"
+description = "A production-oriented Android launcher experience that recreates the calm, tactile feel of an iPhone home screen with lock security, widgets, wallpapers, control center, Siri-style voice entry, and native app launching."
+version = "1.0.0"
+id = "artifacts/ios-android-launcher"
+router = "expo-domain"
+
+[[services]]
+name = "expo"
+ensurePreviewReachable = "/status"
+paths = [ "/ios-android-launcher/" ]
+localPort = 19887
+
+[services.development]
+run = "pnpm --filter @workspace/ios-android-launcher run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/ios-android-launcher", "run", "build" ]
+run = [ "pnpm", "--filter", "@workspace/ios-android-launcher", "run", "serve" ]
+
+[services.env]
+PORT = "19887"
+BASE_PATH = "/ios-android-launcher/"

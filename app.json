@@ -1,0 +1,43 @@
+{
+  "expo": {
+    "name": "iOS Android Launcher",
+    "slug": "ios-android-launcher",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "ios-android-launcher",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": false
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/icon.png",
+        "backgroundColor": "#071124"
+      },
+      "allowBackup": false,
+      "permissions": [
+        "USE_BIOMETRIC",
+        "CAMERA",
+        "SET_WALLPAPER"
+      ],
+      "intentFilters": [
+        {
+          "action": "MAIN",
+          "category": [
+            "HOME",
+            "DEFAULT"
+          ]
+        }
+      ]
+    },
+    "web": {
+      "favicon": "./assets/images/icon.png"
+    },
+    "plugins": ["expo-router", "expo-local-authentication"],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}
